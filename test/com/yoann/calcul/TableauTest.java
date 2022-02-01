@@ -12,7 +12,7 @@ import org.junit.runners.Parameterized;
  *
  */
 @RunWith(Parameterized.class)
-class CalculsTest3 {
+class TableauTest {
 
 	static Stream<Arguments> jeuDeTestTriCroissant() throws Throwable 
     {
