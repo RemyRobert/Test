@@ -6,14 +6,12 @@ import static org.junit.jupiter.api.Assertions.fail;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.yoann.calcul.Calculs;
-
 /**
  * 
  */
 
 /**
- * @author test
+ * @author Remy Robert
  * 
  */
 class CalculsTest {
@@ -32,8 +30,6 @@ class CalculsTest {
         c2 = new Calculs(10,20);
         c3 = new Calculs(100,200);
     }
-
-    
 
     /**
      * Test method for {@link Calculs#multiplier()}.
