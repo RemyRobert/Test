@@ -71,9 +71,6 @@ class CalculsTest2 {
 	        Calculs monCal = new Calculs(firstNumber, secondNumber);
 	        assertEquals(expectedResult, monCal.additionner(), "test en échec pour " + firstNumber + " * " + secondNumber + " != " + expectedResult); 
 
-	    // Partie indépendante (les paramètres peuvent ne servir qu'à une sous partie des tests)
-	        String n = null;
-	        assertNull(n);
 	}
 	
 	@ParameterizedTest(name="Soustraire numéro {index}: nombre1={0}, nombre2={1}, résultat attendu = {2}")
@@ -84,9 +81,6 @@ class CalculsTest2 {
 	        Calculs monCal = new Calculs(firstNumber, secondNumber);
 	        assertEquals(expectedResult, monCal.soustraire(), "test en échec pour " + firstNumber + " * " + secondNumber + " != " + expectedResult); 
 
-	    // Partie indépendante (les paramètres peuvent ne servir qu'à une sous partie des tests)
-	        String n = null;
-	        assertNull(n);
 	}
 	
 	@ParameterizedTest(name="Diviser numéro {index}: nombre1={0}, nombre2={1}, résultat attendu = {2}")
@@ -97,9 +91,6 @@ class CalculsTest2 {
 	        Calculs monCal = new Calculs(firstNumber, secondNumber);
 	        assertEquals(expectedResult, monCal.diviser(), "test en échec pour " + firstNumber + " * " + secondNumber + " != " + expectedResult); 
 
-	    // Partie indépendante (les paramètres peuvent ne servir qu'à une sous partie des tests)
-	        String n = null;
-	        assertNull(n);
 	}
 
 }
