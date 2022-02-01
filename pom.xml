@@ -1,25 +1,59 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>ExempleCoursSysOps</groupId>
-  <artifactId>ExempleCoursSysOps</artifactId>
+  <groupId>testJunit3</groupId>
+  <artifactId>testJunit3</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
-  <properties>
+  
+    <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <junit-platform.version>5.3.1</junit-platform.version>
+        <junit-platform.version>5.7.0</junit-platform.version>
+    </properties>
   
-  </properties>
-   
-  <build>
-    <sourceDirectory>src</sourceDirectory>
-    <!-- source test of the package -->
-    <testSourceDirectory>test</testSourceDirectory>
-    <plugins>
-	 		<plugin>
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit-platform.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit-platform.version}</version>
+            <scope>test</scope>
+        </dependency>
+	<dependency>
+	  <groupId>org.junit.jupiter</groupId>
+	  <artifactId>junit-jupiter-params</artifactId>
+	  <version>${junit-platform.version}</version>
+	  <scope>test</scope>
+	</dependency>
+	<dependency>
+	  <groupId>org.junit.platform</groupId>
+	  <artifactId>junit-platform-runner</artifactId>
+	  <version>1.8.2</version>
+	  <scope>test</scope>
+	</dependency>
+
+    </dependencies> 
+  
+    <build>
+
+        <sourceDirectory>src</sourceDirectory>
+        <!-- source test of the package -->
+        <testSourceDirectory>test</testSourceDirectory>
+
+
+      <!--<sourceDirectory>src/main/java/packJunit</sourceDirectory>-->
+     <!-- <testSourceDirectory>src/test/java/packJunit</testSourceDirectory> -->
+      <pluginManagement>
+        <plugins>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.0</version>
@@ -29,7 +63,11 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M3</version>
                 <configuration>
-                <!-- la config testFailureIgnore permet de placer le job au statut UNSTABLE (au lieu d'un FAIL global) lorsque certains tests sont en échec  -->
+					<includes>
+					    <include>**/Test*.java</include>
+					    <include>**/*Test*.java</include>
+					    <include>**/*Tests.java</include>
+					</includes>
                   <testFailureIgnore>
                       true
                   </testFailureIgnore>
@@ -48,39 +86,7 @@
                     </argLine>
                 </configuration>
             </plugin>
-        </plugins>      
-      
-    
+        </plugins>
+      </pluginManagement>
   </build>
-
-<!--   
-    <dependencies>
-<dependency>
-    <groupId>nl.basjes.parse.httpdlog</groupId>
-    <artifactId>httpdlog-parser</artifactId>
-    <version>5.7</version>
-</dependency>
-    </dependencies>
--->  
-
-<!-- On importe les bibliothèques JUnit uniquement si l'objectif de la construction est de faire des tests (scope test). En Production ils ne seront pas intégré pour limiter les risques et le poids du package déployé -->
-    <dependencies>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>${junit-platform.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit-platform.version}</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies> 
-  
-    
-    
-  
-  
 </project>
