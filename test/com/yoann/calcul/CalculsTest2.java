@@ -17,7 +17,7 @@ class CalculsTest2 {
     static Stream<Arguments> chargerJeuDeTest() throws Throwable 
     {
         return Stream.of(
-            Arguments.of(2,2,4), // appellera : testMultiplier(2,2,4)
+            Arguments.of(2,2,4),
             Arguments.of(6,6,36),
             Arguments.of(3,2,6)
         );
@@ -26,7 +26,7 @@ class CalculsTest2 {
     static Stream<Arguments> chargerJeuDeTestAdditionner() throws Throwable 
     {
         return Stream.of(
-            Arguments.of(2,2,4), // appellera : testMultiplier(2,2,4)
+            Arguments.of(2,2,4),
             Arguments.of(6,6,12),
             Arguments.of(3,2,5)
         );
@@ -35,7 +35,7 @@ class CalculsTest2 {
     static Stream<Arguments> chargerJeuDeTestSoustraire() throws Throwable 
     {
         return Stream.of(
-            Arguments.of(2,2,0), // appellera : testMultiplier(2,2,4)
+            Arguments.of(2,2,0),
             Arguments.of(6,4,2),
             Arguments.of(3,2,1)
         );
@@ -44,7 +44,7 @@ class CalculsTest2 {
     static Stream<Arguments> chargerJeuDeTestDiviser() throws Throwable 
     {
         return Stream.of(
-            Arguments.of(2,2,1), // appellera : testMultiplier(2,2,4)
+            Arguments.of(2,2,1),
             Arguments.of(6,3,2),
             Arguments.of(12,2,6)
         );

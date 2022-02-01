@@ -39,7 +39,7 @@ class CalculsTest {
     {
         if(c1.multiplier() != 2)
         {
-            fail("Methode multiplier non conforme 2*1=2 ne fonctionne pas.");
+            fail("Methode multiplier FAIL. 2 * 1 != 2.");
         }
         
         // Est ce que (2 == 42) ? non donc : test en Erreur
@@ -55,7 +55,7 @@ class CalculsTest {
         
         if(c1.additionner() != 3)
         {
-            fail("Methode additionner non conforme 1+2=3 ne fonctionne pas.");
+            fail("Methode additionner FAIL. 1 + 2 != 3.");
         }
         
         assertEquals(c1.additionner(), 3);
@@ -69,7 +69,7 @@ class CalculsTest {
         
         if(c1.diviser() != 0)
         {
-            fail("Methode diviser non conforme 1/2=0 ne fonctionne pas.");
+            fail("Methode diviser FAIL. 1 / 2 != 0.");
         }
         
         assertEquals(c1.diviser(), 0);
@@ -83,7 +83,7 @@ class CalculsTest {
         
         if(c1.soustraire() != -1)
         {
-            fail("Methode soustraire non conforme 1-2=-1 ne fonctionne pas.");
+            fail("Methode soustraire FAIL : 1 - 2 != -1");
         }
         
         assertEquals(c1.soustraire(), -1);
